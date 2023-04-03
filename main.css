@@ -1,0 +1,197 @@
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  background: #111222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h3 {
+  font-weight: 400;
+}
+
+.weather-app {
+  min-height: 100vh;
+  background-image: url(../image/day/cloudy.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: aliceblue;
+  position: relative;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.weather-app::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 2rem 3rem 5rem 3rem;
+}
+
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.city-name h1 {
+  margin: 0 0 0.2rem 0;
+  font-size: 3rem;
+}
+
+.temp {
+  font-size: 6rem;
+  margin: 0;
+}
+
+.date{
+  font-size: 17px;
+}
+
+.weather img {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.panel {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: rgba(110, 110, 110, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 1;
+  padding: 2em;
+  overflow-y: scroll;
+}
+
+.panel form {
+  margin-bottom: 3em;
+}
+
+.submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.1em;
+  margin: 0;
+  border: none;
+  outline: none;
+  background-color: #fa6d1b;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 500ms;
+}
+
+.submit:hover {
+  background-color: aliceblue;
+  color: #000;
+}
+
+.search {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 0 1rem 0.5rem 0;
+  width: 80%;
+  color: #ffff;
+  font-size: 1.1rem;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search::placeholder {
+  color: #ccc;
+}
+
+.panel ul {
+  padding: 0 0 1rem 0;
+  margin: 2rem 0;
+  border-bottom: 1px solid #cccc;
+}
+
+.panel ul li {
+  margin: 2.5rem 0;
+  color: #ccc;
+}
+
+.panel ul h4 {
+  margin: 3rem 0;
+}
+
+.city {
+  display: block;
+  cursor: pointer;
+}
+
+.city:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.details li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .panel,
+  .container {
+    position: relative;
+    width: 100%;
+    top: initial;
+  }
+
+  .container{
+    align-items: center;
+    padding: 2rem 3rem 3rem 3rem;
+  }
+
+  .container > div {
+    flex-direction: column;
+    font-weight: 700;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 300px) {
+  .weather-app {
+    min-height: 40rem;
+  }
+}
